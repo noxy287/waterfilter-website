@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Flow – Dein tragbarer Wasserfilter</title>
+    <!-- Verknüpfen der externen CSS-Datei-->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3f2fd;
+            color: #333;
+        }
+
+        .header {
+            background: #004e92;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center; /* Vertikale Ausrichtung */
+            justify-content: space-between; /* Abstand zwischen den Elementen */
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+
+            .header img {
+                width: 50px; /* Größe des Logos anpassen */
+                border-radius: 50%; /* Rundung der Ecken */
+            }
+
+        .header-text {
+            font-size: 18px; /* Etwas kleinere Schrift für den Text */
+            display: flex;
+            align-items: center;
+        }
+
+            .header-text span {
+                font-size: 14px;
+                color: #e0e0e0;
+                margin-left: 10px; /* Abstand zwischen den beiden Texten */
+            }
+
+        .account-btn {
+            background: white;
+            color: #004e92;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .feature {
+            width: 30%;
+            background: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 78, 146, 0.2);
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+            .cta a {
+                display: inline-block;
+                background: #004e92;
+                color: white;
+                padding: 15px 30px;
+                text-decoration: none;
+                font-size: 18px;
+                border-radius: 5px;
+            }
+
+                .cta a:hover {
+                    background: #003366;
+                }
+
+        .products {
+            display: flex;
+            justify-content: center; /* Horizontale Zentrierung */
+            margin-top: 40px;
+            align-items: center; /* Vertikale Zentrierung */
+        }
+
+        .product {
+            width: 30%;
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 78, 146, 0.2);
+        }
+
+            .product img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+            }
+
+            .product h3 {
+                margin-top: 10px;
+                font-size: 20px;
+            }
+
+            .product p {
+                color: #555;
+                font-size: 16px;
+            }
+
+            .product .order-btn {
+                display: inline-block;
+                background: #004e92;
+                color: white;
+                padding: 10px 20px;
+                text-decoration: none;
+                font-size: 18px;
+                border-radius: 5px;
+                margin-top: 20px;
+                cursor: pointer;
+            }
+
+                .product .order-btn:hover {
+                    background: #003366;
+                }
+
+        .product-images {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+            .product-images img {
+                width: 30%;
+                height: auto;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin: 0 15px; /* Abstand zwischen den Bildern und dem Produkt */
+            }
+
+        .login-form {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 78, 146, 0.2);
+            text-align: center;
+        }
+
+            .login-form input {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .login-form button {
+                width: 100%;
+                background: #004e92;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+        @keyframes waterFlow {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(10px);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animation-container img {
+            width: 150px;
+            display: block;
+            margin: 20px auto;
+            animation: waterFlow 2s infinite ease-in-out;
+        }
+
+        .text-below-animation {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 30px;
+            color: #333;
+        }
+    </style>
+    <script>
+        function showPopup() {
+            alert("Bald verfügbar!");
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="file:\\\C:\Users\steven\source\repos\html\waterimage.jfif" alt="Logo"> <!-- Hier das Logo einfügen -->
+        <div class="header-text">
+            Pure Flow! Sauberes Wasser – Immer & Überall!
+            <span>Erstellt bei Steven und Moritz</span>
+        </div>
+        <button class="account-btn" onclick="alert('Registrierung kommt bald!')">Konto erstellen</button>
+    </div>
+    <div class="container">
+        <h2>Warum „Pure Flow“?</h2>
+        <p>Unser neuer tragbarer Wasserfilter „Pure Flow“ macht es möglich! Egal ob beim Wandern, Campen oder auf Reisen – du kannst dir sicher sein, dass du immer reines Wasser trinkst.</p>
+
+        <div class="features">
+            <div class="feature">
+                <h3>🌍 Umweltfreundlich</h3>
+                <p>Spare Plastikmüll & schone die Natur</p>
+            </div>
+            <div class="feature">
+                <h3>💧 99,9 % Filterleistung</h3>
+                <p>Entfernt Bakterien, Viren & Schadstoffe</p>
+            </div>
+            <div class="feature">
+                <h3>🎒 Superleicht & Tragbar</h3>
+                <p>Perfekt für unterwegs</p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>🚀 EXKLUSIVES ANGEBOT! 🚀</h2>
+            <p>Warte nicht zu lange! Sichere dir jetzt deinen „Pure Flow“ mit einem exklusiven Rabatt von 20 % für die ersten 100 Bestellungen.</p>
+        </div>
+
+        <!-- Produktsektion mit Naturbildern -->
+        <div class="products">
+            <div class="product-images">
+                <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Natur Bild 1">
+                <div class="product">
+                    <img src="https://prepper-profi.de/cdn/shop/products/VILEAD-Plastic-Portable-Outdoor-Water-Purifier-Field-Camping-Emergency-Survival-Tools-with-Straw-Lid-Environmental-Water_5c3a6721-e145-4c5e-852f-a70f77ba5936_grande.jpg?v=1569120669" alt="Produkt Bild">
+                    <h3>Wasserfilter mini</h3>
+                    <p>
+                        Technische Details:<br />
+
+                        - Filterkapazität: Bis zu 1000 Liter Wasser <br />
+                        - Abmessungen: 20 cm x 5 cm <br />
+                        - Gewicht: Nur 150 g ideal für Backpacker und Reisende <br />
+                        - Lebensdauer des Filters: 6 Monate oder 1000 Liter Wasser <br />
+                    </p>
+                    <a href="#" class="order-btn" onclick="showPopup()">Jetzt Bestellen </a>
+                </div>
+                <img src="https://www.w3schools.com/w3images/forest.jpg" alt="Natur Bild 2">
+            </div>
+        </div>
+    </div>
+
+    <div class="animation-container">
+        <img src="https://cdn-icons-png.flaticon.com/512/10787/10787958.png" alt="Wasserfilter Animation">
+    </div>
+
+    <!-- Text unter der Animation -->
+    <div class="text-below-animation">
+        <p>Der „Pure Flow“ Wasserfilter ist deine Lösung für sauberes Trinkwasser – überall und jederzeit!</p>
+    </div>
+</body>
+</html>
