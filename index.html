@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pure Flow – Dein tragbarer Wasserfilter</title>
-    <!-- Verknüpfen der externen CSS-Datei-->
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,27 +11,30 @@
             padding: 0;
             background-color: #e3f2fd;
             color: #333;
+            transition: background-color 0.3s;
         }
 
         .header {
-            background: #004e92;
+            background: #0465d1;
             color: white;
             padding: 20px;
             display: flex;
-            align-items: center; /* Vertikale Ausrichtung */
-            justify-content: space-between; /* Abstand zwischen den Elementen */
+            align-items: center;
+            justify-content: space-between;
             font-size: 24px;
             font-weight: bold;
-            position: relative;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
             .header img {
-                width: 50px; /* Größe des Logos anpassen */
-                border-radius: 50%; /* Rundung der Ecken */
+                width: 50px;
+                border-radius: 50%;
             }
 
         .header-text {
-            font-size: 18px; /* Etwas kleinere Schrift für den Text */
+            font-size: 18px;
             display: flex;
             align-items: center;
         }
@@ -41,7 +42,7 @@
             .header-text span {
                 font-size: 14px;
                 color: #e0e0e0;
-                margin-left: 10px; /* Abstand zwischen den beiden Texten */
+                margin-left: 10px;
             }
 
         .account-btn {
@@ -52,7 +53,12 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s;
         }
+
+            .account-btn:hover {
+                background-color: #003366;
+            }
 
         .container {
             width: 80%;
@@ -64,6 +70,7 @@
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .feature {
@@ -73,7 +80,12 @@
             text-align: center;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 78, 146, 0.2);
+            transition: transform 0.3s ease;
         }
+
+            .feature:hover {
+                transform: translateY(-10px);
+            }
 
         .cta {
             text-align: center;
@@ -88,6 +100,7 @@
                 text-decoration: none;
                 font-size: 18px;
                 border-radius: 5px;
+                transition: background-color 0.3s ease;
             }
 
                 .cta a:hover {
@@ -96,9 +109,9 @@
 
         .products {
             display: flex;
-            justify-content: center; /* Horizontale Zentrierung */
+            justify-content: center;
             margin-top: 40px;
-            align-items: center; /* Vertikale Zentrierung */
+            align-items: center;
         }
 
         .product {
@@ -108,7 +121,12 @@
             text-align: center;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 78, 146, 0.2);
+            transition: transform 0.3s ease;
         }
+
+            .product:hover {
+                transform: translateY(-10px);
+            }
 
             .product img {
                 width: 100%;
@@ -136,6 +154,7 @@
                 border-radius: 5px;
                 margin-top: 20px;
                 cursor: pointer;
+                transition: background-color 0.3s;
             }
 
                 .product .order-btn:hover {
@@ -154,38 +173,72 @@
                 height: auto;
                 border-radius: 5px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                margin: 0 15px; /* Abstand zwischen den Bildern und dem Produkt */
+                margin: 0 15px;
+                transition: transform 0.3s ease;
             }
 
-        .login-form {
-            width: 300px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 0 15px rgba(0, 78, 146, 0.2);
+                .product-images img:hover {
+                    transform: scale(1.05);
+                }
+
+        .animation-container {
             text-align: center;
+            margin-top: 40px;
         }
 
-            .login-form input {
-                width: 100%;
-                padding: 10px;
-                margin: 10px 0;
-                border: 1px solid #ccc;
-                border-radius: 5px;
+            .animation-container img {
+                width: 150px;
+                display: block;
+                margin: 20px auto;
+                animation: waterFlow 2s infinite ease-in-out;
             }
 
-            .login-form button {
-                width: 100%;
-                background: #004e92;
-                color: white;
-                padding: 10px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 16px;
+        .text-below-animation {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        /* Parallax effect */
+        .parallax {
+            background-image: url('https://wallpapers.com/images/hd/1920x1080-hd-nature-old-mountain-o3g4tz5qe34ij38f.jpg');
+            height: 400px;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+            body.dark-mode .header {
+                background: #1f1f1f;
             }
 
+            body.dark-mode .cta a {
+                background: #1f1f1f;
+            }
+
+            body.dark-mode .product, body.dark-mode .feature {
+                background: #333;
+                color: #e0e0e0;
+            }
+
+                body.dark-mode .product .order-btn {
+                    background: #1f1f1f;
+                }
+
+        /* Water Flow Animation */
         @keyframes waterFlow {
             0% {
                 transform: translateY(0);
@@ -203,35 +256,46 @@
             }
         }
 
-        .animation-container img {
-            width: 150px;
-            display: block;
-            margin: 20px auto;
-            animation: waterFlow 2s infinite ease-in-out;
+        @media (max-width: 768px) {
+            .features, .products {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature, .product {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .product-images img {
+                width: 80%;
+            }
         }
 
-        .text-below-animation {
-            text-align: center;
-            font-size: 18px;
-            margin-top: 30px;
-            color: #333;
-        }
     </style>
     <script>
         function showPopup() {
             alert("Bald verfügbar!");
         }
+
+        // Toggle dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
     </script>
 </head>
 <body>
     <div class="header">
-        <img src="file:\\\C:\Users\steven\source\repos\html\waterimage.jfif" alt="Logo"> <!-- Hier das Logo einfügen -->
+        <img src="file:\\\C:\Users\steven\source\repos\html\waterimage.jfif" alt="Logo">
         <div class="header-text">
             Pure Flow! Sauberes Wasser – Immer & Überall!
             <span>Erstellt bei Steven und Moritz</span>
         </div>
         <button class="account-btn" onclick="alert('Registrierung kommt bald!')">Konto erstellen</button>
     </div>
+
+    <div class="parallax"></div>
+
     <div class="container">
         <h2>Warum „Pure Flow“?</h2>
         <p>Unser neuer tragbarer Wasserfilter „Pure Flow“ macht es möglich! Egal ob beim Wandern, Campen oder auf Reisen – du kannst dir sicher sein, dass du immer reines Wasser trinkst.</p>
@@ -256,7 +320,6 @@
             <p>Warte nicht zu lange! Sichere dir jetzt deinen „Pure Flow“ mit einem exklusiven Rabatt von 20 % für die ersten 100 Bestellungen.</p>
         </div>
 
-        <!-- Produktsektion mit Naturbildern -->
         <div class="products">
             <div class="product-images">
                 <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Natur Bild 1">
@@ -265,13 +328,12 @@
                     <h3>Wasserfilter mini</h3>
                     <p>
                         Technische Details:<br />
-
                         - Filterkapazität: Bis zu 1000 Liter Wasser <br />
                         - Abmessungen: 20 cm x 5 cm <br />
                         - Gewicht: Nur 150 g ideal für Backpacker und Reisende <br />
                         - Lebensdauer des Filters: 6 Monate oder 1000 Liter Wasser <br />
                     </p>
-                    <a href="#" class="order-btn" onclick="showPopup()">Jetzt Bestellen </a>
+                    <a href="#" class="order-btn" onclick="showPopup()">Jetzt Bestellen</a>
                 </div>
                 <img src="https://www.w3schools.com/w3images/forest.jpg" alt="Natur Bild 2">
             </div>
@@ -282,9 +344,11 @@
         <img src="https://cdn-icons-png.flaticon.com/512/10787/10787958.png" alt="Wasserfilter Animation">
     </div>
 
-    <!-- Text unter der Animation -->
     <div class="text-below-animation">
         <p>Der „Pure Flow“ Wasserfilter ist deine Lösung für sauberes Trinkwasser – überall und jederzeit!</p>
     </div>
+
+    <!-- Dark mode toggle -->
+    <button class="account-btn" onclick="toggleDarkMode()">Wechseln zu Dunkelmodus</button>
 </body>
 </html>
