@@ -289,9 +289,9 @@
         <img src="https://github.com/noxy287/waterfilter-website/blob/main/waterimage.jfif" alt="Logo">
         <div class="header-text">
             Pure Flow! Sauberes Wasser – Immer & Überall!
-            <span>Erstellt bei Steven und Moritz</span>
+            <span>Erstellt von Steven und Moritz</span>
         </div>
-        <button class="account-btn" onclick="alert('Registrierung kommt bald!')">Konto erstellen</button>
+        <button class="account-btn" onclick="alert('Registrierung kommt bald!')" aria-label="Konto erstellen">Konto erstellen</button>
     </div>
 
     <div class="parallax"></div>
@@ -350,5 +350,35 @@
 
     <!-- Dark mode toggle -->
     <button class="account-btn" onclick="toggleDarkMode()">Wechseln zu Dunkelmodus</button>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Pure Flow. Alle Rechte vorbehalten.</p>
+            <div>
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com/steven.nfs_/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FOOTER -->
+    <style>
+        footer {
+            background-color: #0465d1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+            footer a {
+                color: white;
+                margin: 0 10px;
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+    </style>
 </body>
 </html>
